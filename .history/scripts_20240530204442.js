@@ -61,6 +61,7 @@ function setCurrentDay(weekday, day) {
     }
 }
 
+
 function calcDayCount(m) {
     switch (m + 1) {
         case 1: count = 31;
@@ -94,14 +95,12 @@ function fillAllDay(m, y) {
 
     dayCount = calcDayCount(m)
 
-    for (let index = 1; index <= dayCount; index++) {
+    for (let index = 1; index < dayCount; index++) {
         date = new Date(y + "-" + m + "-" + index)
         weekday = date.getDay()
-        setCurrentDay(weekday, index)
+        setCurrentDay(weekday++, index)
     }
+
 
 }
 
-fillAllDay(m , y)
-setMonth(m)
-setYear(y)

@@ -41,7 +41,7 @@ function setMonth(m) {
 
 }
 
-function setCurrentDay(weekday, day) {
+function setCurrentDay(weekday , day) {
     // weekday = #column 
     if (day <= 7) {
         x = "1-" + weekday
@@ -61,47 +61,38 @@ function setCurrentDay(weekday, day) {
     }
 }
 
+
 function calcDayCount(m) {
     switch (m + 1) {
-        case 1: count = 31;
+        case 1: count = "January";
             break;
-        case 2: count = 28;
+        case 2: count = "February";
             break;
-        case 3: count = 31;
+        case 3: count = "March";
             break;
-        case 4: count = 30;
+        case 4: count = "April";
             break;
-        case 5: count = 31;
+        case 5: count = "May";
             break;
-        case 6: count = 30;
+        case 6: count = "June";
             break;
-        case 7: count = 31;
+        case 7: count = "July";
             break;
-        case 8: count = 31;
+        case 8: count = "August";
             break;
-        case 9: count = 30;
+        case 9: count = "September";
             break;
-        case 10: count = 31;
+        case 10: month = "October";
             break;
-        case 11: count = 30;
+        case 11: month = "November";
             break;
-        case 12: count = 31;
+        case 12: month = "December";
             break;
-    }
 }
+function fillAllDay(m) {
 
-function fillAllDay(m, y) {
 
-    dayCount = calcDayCount(m)
-
-    for (let index = 1; index <= dayCount; index++) {
-        date = new Date(y + "-" + m + "-" + index)
-        weekday = date.getDay()
-        setCurrentDay(weekday, index)
-    }
 
 }
 
-fillAllDay(m , y)
-setMonth(m)
-setYear(y)
+calculator(m, y, day, weekday)

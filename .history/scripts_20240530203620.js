@@ -61,6 +61,7 @@ function setCurrentDay(weekday, day) {
     }
 }
 
+
 function calcDayCount(m) {
     switch (m + 1) {
         case 1: count = 31;
@@ -90,18 +91,14 @@ function calcDayCount(m) {
     }
 }
 
-function fillAllDay(m, y) {
+function fillAllDay(m) {
+    cdc=calcDayCount(m)
+    for (let index = 0; index < array.length; index++) {
+        const element = array[index];
 
-    dayCount = calcDayCount(m)
-
-    for (let index = 1; index <= dayCount; index++) {
-        date = new Date(y + "-" + m + "-" + index)
-        weekday = date.getDay()
-        setCurrentDay(weekday, index)
     }
+
 
 }
 
-fillAllDay(m , y)
-setMonth(m)
-setYear(y)
+calculator(m, y, day, weekday)

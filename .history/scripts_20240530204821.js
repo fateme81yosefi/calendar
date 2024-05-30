@@ -61,6 +61,7 @@ function setCurrentDay(weekday, day) {
     }
 }
 
+
 function calcDayCount(m) {
     switch (m + 1) {
         case 1: count = 31;

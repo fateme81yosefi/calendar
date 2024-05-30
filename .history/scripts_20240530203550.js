@@ -41,7 +41,7 @@ function setMonth(m) {
 
 }
 
-function setCurrentDay(weekday, day) {
+function setCurrentDay(weekday , day) {
     // weekday = #column 
     if (day <= 7) {
         x = "1-" + weekday
@@ -60,6 +60,7 @@ function setCurrentDay(weekday, day) {
         document.getElementById(x).innerHTML = day
     }
 }
+
 
 function calcDayCount(m) {
     switch (m + 1) {
@@ -87,21 +88,13 @@ function calcDayCount(m) {
             break;
         case 12: count = 31;
             break;
-    }
+}
 }
 
-function fillAllDay(m, y) {
+function fillAllDay(m) {
+for
 
-    dayCount = calcDayCount(m)
-
-    for (let index = 1; index <= dayCount; index++) {
-        date = new Date(y + "-" + m + "-" + index)
-        weekday = date.getDay()
-        setCurrentDay(weekday, index)
-    }
 
 }
 
-fillAllDay(m , y)
-setMonth(m)
-setYear(y)
+calculator(m, y, day, weekday)

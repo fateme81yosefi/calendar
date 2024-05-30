@@ -41,7 +41,41 @@ function setMonth(m) {
 
 }
 
-function setCurrentDay(weekday, day) {
+function fill(m) {
+
+    switch (m + 1) {
+        case 1: b = "January";
+            for (let first = 1; first < 31; first++) {
+
+            }
+            break;
+        case 2: b = "February";
+            break;
+        case 3: b = "March";
+            break;
+        case 4: b = "April";
+            break;
+        case 5: b = "May";
+            break;
+        case 6: b = "June";
+            break;
+        case 7: b = "July";
+            break;
+        case 8: b = "August";
+            break;
+        case 9: b = "September";
+            break;
+        case 10: b = "October";
+            break;
+        case 11: b = "November";
+            break;
+        case 12: b = "December";
+            break;
+    }
+
+}
+
+function setDay(weekday , ) {
     // weekday = #column 
     if (day <= 7) {
         x = "1-" + weekday
@@ -61,47 +95,11 @@ function setCurrentDay(weekday, day) {
     }
 }
 
-function calcDayCount(m) {
-    switch (m + 1) {
-        case 1: count = 31;
-            break;
-        case 2: count = 28;
-            break;
-        case 3: count = 31;
-            break;
-        case 4: count = 30;
-            break;
-        case 5: count = 31;
-            break;
-        case 6: count = 30;
-            break;
-        case 7: count = 31;
-            break;
-        case 8: count = 31;
-            break;
-        case 9: count = 30;
-            break;
-        case 10: count = 31;
-            break;
-        case 11: count = 30;
-            break;
-        case 12: count = 31;
-            break;
-    }
-}
 
-function fillAllDay(m, y) {
+function calculator(m, y, day, weekday) {
 
-    dayCount = calcDayCount(m)
 
-    for (let index = 1; index <= dayCount; index++) {
-        date = new Date(y + "-" + m + "-" + index)
-        weekday = date.getDay()
-        setCurrentDay(weekday, index)
-    }
 
 }
 
-fillAllDay(m , y)
-setMonth(m)
-setYear(y)
+calculator(m, y, day, weekday)

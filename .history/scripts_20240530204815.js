@@ -61,6 +61,7 @@ function setCurrentDay(weekday, day) {
     }
 }
 
+
 function calcDayCount(m) {
     switch (m + 1) {
         case 1: count = 31;
@@ -104,4 +105,3 @@ function fillAllDay(m, y) {
 
 fillAllDay(m , y)
 setMonth(m)
-setYear(y)
