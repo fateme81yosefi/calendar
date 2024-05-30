@@ -9,15 +9,9 @@ console.log(w+1)
 
 function calculator(day,month,weekday){
     // weekday = #column 
-    if(day <=7 || day>=29){
-        row = 1
+    if(day <=7){
+        row= 1
     }else if(day <=14){
-        row = 2
-    }else if(day <= 21){
-        row = 3
-    }else if(day <= 28){
-        row = 4
+        
     }
-    
-
 }

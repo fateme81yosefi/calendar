@@ -19,5 +19,4 @@ function calculator(day,month,weekday){
         row = 4
     }
     
-
 }

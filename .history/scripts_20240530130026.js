@@ -18,6 +18,4 @@ function calculator(day,month,weekday){
     }else if(day <= 28){
         row = 4
     }
-    
-
 }
