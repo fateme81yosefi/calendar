@@ -1,6 +1,5 @@
 const d = new Date();
 m = d.getMonth()
-m++
 y = d.getFullYear()
 day = d.getDate()
 weekday = d.getDay()

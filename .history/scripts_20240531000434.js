@@ -1,6 +1,5 @@
 const d = new Date();
 m = d.getMonth()
-m++
 y = d.getFullYear()
 day = d.getDate()
 weekday = d.getDay()
@@ -139,7 +138,7 @@ function calcDayCount(m) {
 
 function fillAllDay(m, y) {
 
-    dayCount = calcDayCount(m)
+    dayCount = calcDayCount(m + 1)
 
     m++;
 
@@ -174,6 +173,9 @@ function fillAllDay(m, y) {
     }
 }
 
-setMonth(m)
+
+setMonth(m + 1)
 setYear(y)
+
+
 fillAllDay(m, y)
