@@ -10,13 +10,12 @@ function increaseMonth() {
 
     m = document.getElementById("month").innerHTML
     month = monthNameToNum(m)
-    month++
-    if (month >= 13) {
+    if ((month++) >= 13) {
         incYear()
     }
     else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
+        fillAllDay(month++, y, dayCount)
+        setMonth(month++)
     }
 }
 

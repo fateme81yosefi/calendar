@@ -9,47 +9,36 @@ function increaseMonth() {
     console.log(increaseMonth)
 
     m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    month++
-    if (month >= 13) {
-        incYear()
-    }
-    else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
+    month=monthNameToNum(m)
+    console.log(month)
+    fillAllDay(month++, y, dayCount)
+    setMonth(month++)
 }
 
 function dec() {
-    m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    month--
-    if (month < 1) {
-        decYear()
-    } else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
+    console.log("decreasMonth")
 
+    m = document.getElementById("month").innerHTML
+    month=monthNameToNum(m)
+    console.log(month)
+    fillAllDay(month--, y, dayCount)
+    setMonth(month--)
 }
 
 function incYear() {
-    let yy = parseInt(document.getElementById("year").innerHTML);
-    yy++;
-    document.getElementById("year").innerHTML = yy;
-    setYear(yy)
-    fillAllDay(m, yy, dayCount)
-}
 
+    yy = document.getElementById("year").innerHTML
+    fillAllDay(month, +yy++, dayCount)
+    setMonth(+yy++)
+}
 
 function decYear() {
-    let yy = parseInt(document.getElementById("year").innerHTML);
-    yy--;
-    document.getElementById("year").innerHTML = yy;
-    setYear(yy)
-    fillAllDay(m, yy, dayCount)
-}
 
+    yy = document.getElementById("year").innerHTML
+
+    fillAllDay(month, yy++, dayCount)
+    setYear(yy)
+}
 
 function setYear(y) {
     document.getElementById("year").innerHTML = y
@@ -150,5 +139,5 @@ function fillAllDay(m, y, dayCount) {
 dayCount = calcDayCount(m + 1)
 
 fillAllDay(m, y, dayCount)
-setMonth(m + 1)
+setMonth(m+1)
 setYear(y)

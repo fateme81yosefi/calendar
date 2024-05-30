@@ -5,55 +5,18 @@ day = d.getDate()
 weekday = d.getDay()
 weekday++
 
-function increaseMonth() {
-    console.log(increaseMonth)
-
+function increseMonth() {
     m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    month++
-    if (month >= 13) {
-        incYear()
-    }
-    else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
+    monthNameToNum(m)
+    console.log(m)
+    fillAllDay(m, y, dayCount)
+    setMonth(m)
 }
-
-function dec() {
-    m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    month--
-    if (month < 1) {
-        decYear()
-    } else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
-
-}
-
-function incYear() {
-    let yy = parseInt(document.getElementById("year").innerHTML);
-    yy++;
-    document.getElementById("year").innerHTML = yy;
-    setYear(yy)
-    fillAllDay(m, yy, dayCount)
-}
-
-
-function decYear() {
-    let yy = parseInt(document.getElementById("year").innerHTML);
-    yy--;
-    document.getElementById("year").innerHTML = yy;
-    setYear(yy)
-    fillAllDay(m, yy, dayCount)
-}
-
 
 function setYear(y) {
     document.getElementById("year").innerHTML = y
 }
+
 function monthNameToNum(m) {
     switch (m) {
         case "January": return 1;
@@ -71,7 +34,7 @@ function monthNameToNum(m) {
     }
 }
 function setMonth(m) {
-    switch (m) {
+    switch (m + 1) {
         case 1: month = "January";
             break;
         case 2: month = "February";
@@ -150,5 +113,5 @@ function fillAllDay(m, y, dayCount) {
 dayCount = calcDayCount(m + 1)
 
 fillAllDay(m, y, dayCount)
-setMonth(m + 1)
+setMonth(m)
 setYear(y)

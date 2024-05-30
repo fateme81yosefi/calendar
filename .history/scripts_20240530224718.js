@@ -10,27 +10,19 @@ function increaseMonth() {
 
     m = document.getElementById("month").innerHTML
     month = monthNameToNum(m)
-    month++
-    if (month >= 13) {
-        incYear()
-    }
-    else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
+    console.log(month)
+    fillAllDay(month++, y, dayCount)
+    setMonth(month++)
 }
 
 function dec() {
+    console.log("decreasMonth")
+
     m = document.getElementById("month").innerHTML
     month = monthNameToNum(m)
-    month--
-    if (month < 1) {
-        decYear()
-    } else {
-        fillAllDay(month, y, dayCount)
-        setMonth(month)
-    }
-
+    console.log(month)
+    fillAllDay(month--, y, dayCount)
+    setMonth(month--)
 }
 
 function incYear() {
@@ -38,7 +30,7 @@ function incYear() {
     yy++;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
-    fillAllDay(m, yy, dayCount)
+    fillAllDay(m,yy,dayCount)
 }
 
 
@@ -46,8 +38,6 @@ function decYear() {
     let yy = parseInt(document.getElementById("year").innerHTML);
     yy--;
     document.getElementById("year").innerHTML = yy;
-    setYear(yy)
-    fillAllDay(m, yy, dayCount)
 }
 
 
