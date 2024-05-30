@@ -1,15 +1,15 @@
-const d = new Date();
-m = d.getMonth()
-y = d.getFullYear()
-day = d.getDate()
-weekday = d.getDay()
-weekday++
 
 
 
 
-function calculator(m , y , day , weekday) {
- 
+function calculator() {
+    const d = new Date();
+    m = d.getMonth()
+    y = d.getFullYear()
+    day = d.getDate()
+    weekday = d.getDay()
+
+    weekday++
 
     document.getElementById("year").innerHTML = y
 
@@ -44,19 +44,20 @@ function calculator(m , y , day , weekday) {
 
     // weekday = #column 
     if (day <= 7 ) {
+        row = 1
         x = "1-" + weekday
         document.getElementById(x).innerHTML = day
     } else if (day <= 14) {
+        row = 2
         x = "2-" + weekday
         document.getElementById(x).innerHTML = day
     } else if (day <= 21) {
+        row = 3
         x = "3-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day <= 28) {
+    } else if (day <= 28 || day >= 29) {
+        row = 4
         x = "4-" + weekday
-        document.getElementById(x).innerHTML = day
-    }else if (day >= 29) {
-        x = "5-" + weekday
         document.getElementById(x).innerHTML = day
     }
 

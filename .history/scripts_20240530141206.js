@@ -3,8 +3,8 @@ m = d.getMonth()
 y = d.getFullYear()
 day = d.getDate()
 weekday = d.getDay()
-weekday++
 
+weekday++
 
 
 

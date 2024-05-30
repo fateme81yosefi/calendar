@@ -3,12 +3,12 @@ m = d.getMonth()
 y = d.getFullYear()
 day = d.getDate()
 weekday = d.getDay()
+
 weekday++
 
 
 
-
-function calculator(m , y , day , weekday) {
+function calculator() {
  
 
     document.getElementById("year").innerHTML = y

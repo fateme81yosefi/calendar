@@ -7,7 +7,6 @@ weekday++
 
 
 
-
 function calculator(m , y , day , weekday) {
  
 

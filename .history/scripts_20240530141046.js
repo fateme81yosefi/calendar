@@ -1,15 +1,15 @@
-const d = new Date();
-m = d.getMonth()
-y = d.getFullYear()
-day = d.getDate()
-weekday = d.getDay()
-weekday++
 
 
 
 
-function calculator(m , y , day , weekday) {
- 
+function calculator() {
+    const d = new Date();
+    m = d.getMonth()
+    y = d.getFullYear()
+    day = d.getDate()
+    weekday = d.getDay()
+
+    weekday++
 
     document.getElementById("year").innerHTML = y
 
