@@ -6,22 +6,13 @@ weekday = d.getDay()
 weekday++
 
 
-function getMonth() {
-    m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    return month
+function getMonth(){
+    document.get
 }
-
-function getYear() {
-    year = parseInt(document.getElementById("year").innerHTML)
-    return year
-}
-
-
 function increaseMonth() {
 
-    month = getMonth()
-
+    m = document.getElementById("month").innerHTML
+    month = monthNameToNum(m)
     month++
     if (month > 12) {
         incYear()
@@ -35,7 +26,8 @@ function increaseMonth() {
 }
 
 function dec() {
-    month = getMonth()
+    m = document.getElementById("month").innerHTML
+    month = monthNameToNum(m)
     month--
     if (month < 1) {
         decYear()
@@ -48,7 +40,7 @@ function dec() {
 }
 
 function incYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy++;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
@@ -56,7 +48,7 @@ function incYear() {
 }
 
 function decYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy--;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
@@ -148,7 +140,7 @@ function fillAllDay(m, y) {
 
     let row = 1
     let col = fd
-    for (let i = 1; i < col; i++) {
+    for(let i=1; i<col; i++){
         const x = row + "-" + i;
         document.getElementById(x).innerHTML = ""
     }
@@ -166,18 +158,17 @@ function fillAllDay(m, y) {
         }
     }
 
-    for (let i = col; i <= 7; i++) {
-        if (row == 5) {
+    for(let i=col; i<=7; i++){
+        if(row==5){
             const x = row + "-" + i;
-            document.getElementById(x).innerHTML = ""
+            document.getElementById(x).innerHTML = ""        
         }
     }
 }
 
 
+fillAllDay(m, y)
+
 setMonth(m + 1)
 
 setYear(y)
-
-
-fillAllDay(m, y)

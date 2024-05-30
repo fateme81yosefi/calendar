@@ -9,18 +9,10 @@ weekday++
 function getMonth() {
     m = document.getElementById("month").innerHTML
     month = monthNameToNum(m)
-    return month
 }
-
-function getYear() {
-    year = parseInt(document.getElementById("year").innerHTML)
-    return year
-}
-
 
 function increaseMonth() {
 
-    month = getMonth()
 
     month++
     if (month > 12) {
@@ -35,7 +27,8 @@ function increaseMonth() {
 }
 
 function dec() {
-    month = getMonth()
+    m = document.getElementById("month").innerHTML
+    month = monthNameToNum(m)
     month--
     if (month < 1) {
         decYear()
@@ -48,7 +41,7 @@ function dec() {
 }
 
 function incYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy++;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
@@ -56,7 +49,7 @@ function incYear() {
 }
 
 function decYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy--;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)

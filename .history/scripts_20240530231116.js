@@ -5,23 +5,10 @@ day = d.getDate()
 weekday = d.getDay()
 weekday++
 
-
-function getMonth() {
-    m = document.getElementById("month").innerHTML
-    month = monthNameToNum(m)
-    return month
-}
-
-function getYear() {
-    year = parseInt(document.getElementById("year").innerHTML)
-    return year
-}
-
-
 function increaseMonth() {
 
-    month = getMonth()
-
+    m = document.getElementById("month").innerHTML
+    month = monthNameToNum(m)
     month++
     if (month > 12) {
         incYear()
@@ -29,44 +16,46 @@ function increaseMonth() {
 
     }
     else {
-        fillAllDay(month, y)
+        fillAllDay(month, y, dayCount)
         setMonth(month)
     }
 }
 
 function dec() {
-    month = getMonth()
+    m = document.getElementById("month").innerHTML
+    month = monthNameToNum(m)
     month--
     if (month < 1) {
         decYear()
         setMonth(12)
     } else {
-        fillAllDay(month, y)
+        fillAllDay(month, y, dayCount)
         setMonth(month)
     }
 
 }
 
 function incYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy++;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
-    fillAllDay(m, yy)
+    fillAllDay(m, yy, dayCount)
 }
 
+
 function decYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy--;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
-    fillAllDay(m, yy)
+    fillAllDay(m, yy, dayCount)
 }
+
 
 function setYear(y) {
     document.getElementById("year").innerHTML = y
 }
-
 function monthNameToNum(m) {
     switch (m) {
         case "January": return 1;
@@ -83,7 +72,6 @@ function monthNameToNum(m) {
         case "December": return 12;
     }
 }
-
 function setMonth(m) {
     switch (m) {
         case 1: month = "January";
@@ -137,10 +125,7 @@ function calcDayCount(m) {
     }
 }
 
-function fillAllDay(m, y) {
-
-    dayCount = calcDayCount(m + 1)
-
+function fillAllDay(m, y, dayCount) {
     m++;
 
     var fd = findFirstDayMonth(m, y);
@@ -148,7 +133,7 @@ function fillAllDay(m, y) {
 
     let row = 1
     let col = fd
-    for (let i = 1; i < col; i++) {
+    for(let i=1; i<col; i++){
         const x = row + "-" + i;
         document.getElementById(x).innerHTML = ""
     }
@@ -166,18 +151,16 @@ function fillAllDay(m, y) {
         }
     }
 
-    for (let i = col; i <= 7; i++) {
-        if (row == 5) {
+    for(let i=col; i<=7; i++){
+        if(row==5){
             const x = row + "-" + i;
-            document.getElementById(x).innerHTML = ""
+            document.getElementById(x).innerHTML = ""        
         }
     }
 }
 
+dayCount = calcDayCount(m + 1)
 
+fillAllDay(m, y, dayCount)
 setMonth(m + 1)
-
 setYear(y)
-
-
-fillAllDay(m, y)

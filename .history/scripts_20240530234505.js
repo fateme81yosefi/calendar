@@ -48,7 +48,7 @@ function dec() {
 }
 
 function incYear() {
-    let yy = getYear()
+    let yy = get
     yy++;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
@@ -56,7 +56,7 @@ function incYear() {
 }
 
 function decYear() {
-    let yy = getYear()
+    let yy = parseInt(document.getElementById("year").innerHTML);
     yy--;
     document.getElementById("year").innerHTML = yy;
     setYear(yy)
