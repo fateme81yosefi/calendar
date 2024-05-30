@@ -57,7 +57,7 @@ function setCurrentDay(weekday, day) {
     } else if (day < 28) {
         x = "4-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day > 27) {
+    } else if (day > 29) {
         x = "5-" + weekday
         document.getElementById(x).innerHTML = day
     }
@@ -84,7 +84,7 @@ function calcDayCount(m) {
 function fillAllDay(m, y, dayCount) {
 
     console.log("fillAllDay")
-    m++
+
     for (let i = 1; i <= dayCount; i++) {
 
         const date = new Date(y + "-" + m + "-" + i)
@@ -97,7 +97,7 @@ function fillAllDay(m, y, dayCount) {
 
 }
 
-dayCount = calcDayCount(m+1)
+dayCount = calcDayCount(m)
 
 fillAllDay(m, y, dayCount)
 setMonth(m)

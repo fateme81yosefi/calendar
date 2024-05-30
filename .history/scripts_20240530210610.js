@@ -45,19 +45,19 @@ function setCurrentDay(weekday, day) {
     console.log("setCurrentDay")
 
     // weekday = #column 
-    if (day < 7) {
+    if (day <= 7) {
         x = "1-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 14) {
+    } else if (day <= 14) {
         x = "2-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 21) {
+    } else if (day <= 21) {
         x = "3-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 28) {
+    } else if (day <= 28) {
         x = "4-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day > 27) {
+    } else if (day >= 29) {
         x = "5-" + weekday
         document.getElementById(x).innerHTML = day
     }
@@ -84,20 +84,18 @@ function calcDayCount(m) {
 function fillAllDay(m, y, dayCount) {
 
     console.log("fillAllDay")
-    m++
+
     for (let i = 1; i <= dayCount; i++) {
 
         const date = new Date(y + "-" + m + "-" + i)
-        console.log(date.getDay())
-
         w = date.getDay()
-        setCurrentDay(w+1, i)
+        setCurrentDay(w, i)
 
     }
 
 }
 
-dayCount = calcDayCount(m+1)
+dayCount = calcDayCount(m)
 
 fillAllDay(m, y, dayCount)
 setMonth(m)

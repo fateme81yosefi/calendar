@@ -84,7 +84,7 @@ function calcDayCount(m) {
 function fillAllDay(m, y, dayCount) {
 
     console.log("fillAllDay")
-    m++
+
     for (let i = 1; i <= dayCount; i++) {
 
         const date = new Date(y + "-" + m + "-" + i)
@@ -97,7 +97,7 @@ function fillAllDay(m, y, dayCount) {
 
 }
 
-dayCount = calcDayCount(m+1)
+dayCount = calcDayCount(m)
 
 fillAllDay(m, y, dayCount)
 setMonth(m)

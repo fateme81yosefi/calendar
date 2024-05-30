@@ -84,10 +84,10 @@ function calcDayCount(m) {
 function fillAllDay(m, y, dayCount) {
 
     console.log("fillAllDay")
-    m++
+
     for (let i = 1; i <= dayCount; i++) {
 
-        const date = new Date(y + "-" + m + "-" + i)
+        const date = new Date(y + "-" + m+1 + "-" + i)
         console.log(date.getDay())
 
         w = date.getDay()

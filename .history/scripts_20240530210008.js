@@ -45,19 +45,19 @@ function setCurrentDay(weekday, day) {
     console.log("setCurrentDay")
 
     // weekday = #column 
-    if (day < 7) {
+    if (day <= 7) {
         x = "1-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 14) {
+    } else if (day <= 14) {
         x = "2-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 21) {
+    } else if (day <= 21) {
         x = "3-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day < 28) {
+    } else if (day <= 28) {
         x = "4-" + weekday
         document.getElementById(x).innerHTML = day
-    } else if (day > 27) {
+    } else if (day >= 29) {
         x = "5-" + weekday
         document.getElementById(x).innerHTML = day
     }
@@ -67,37 +67,48 @@ function calcDayCount(m) {
     console.log("calcDayCount")
     switch (m + 1) {
         case 1: return 31;
-        case 2: return 28;
-        case 3: return 31;
-        case 4: return 30;
-        case 5: return 31;
-        case 6: return 30;
-        case 7: return 31;
-        case 8: return 31;
-        case 9: return 30;
-        case 10: return 31;
-        case 11: return 30;
-        case 12: return 31;
+            break;
+        case 2: count = 28;
+            break;
+        case 3: count = 31;
+            break;
+        case 4: count = 30;
+            break;
+        case 5: count = 31;
+            break;
+        case 6: count = 30;
+            break;
+        case 7: count = 31;
+            break;
+        case 8: count = 31;
+            break;
+        case 9: count = 30;
+            break;
+        case 10: count = 31;
+            break;
+        case 11: count = 30;
+            break;
+        case 12: count = 31;
+            break;
     }
 }
 
 function fillAllDay(m, y, dayCount) {
 
     console.log("fillAllDay")
-    m++
+
     for (let i = 1; i <= dayCount; i++) {
+        console.log("fillAllDay Loop")
 
         const date = new Date(y + "-" + m + "-" + i)
-        console.log(date.getDay())
-
         w = date.getDay()
-        setCurrentDay(w+1, i)
+        setCurrentDay(w, i)
 
     }
 
 }
 
-dayCount = calcDayCount(m+1)
+dayCount = calcDayCount(m)
 
 fillAllDay(m, y, dayCount)
 setMonth(m)
