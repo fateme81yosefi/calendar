@@ -1,0 +1,35 @@
+tr {
+  background-color: #ccd5ae;
+  border: 1px solid #fefae0;
+  padding: 20px;
+  margin: 12px;
+}
+td,
+th {
+  background-color: #ccd5ae;
+  border: 1px solid #fefae0;
+  padding: 20px;
+  margin: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  width: 90px;
+  height: 40px;
+  background-color: #ccd5ae;
+  border: none;
+}
+.contain-year, .contain-month{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
+}
+.container-calendar{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-direction: column;
+}

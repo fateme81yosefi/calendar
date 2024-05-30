@@ -1,0 +1,26 @@
+tr {
+  background-color: #ccd5ae;
+  border: 1px solid #fefae0;
+  padding: 20px;
+  margin: 12px;
+}
+td,
+th {
+  background-color: #ccd5ae;
+  border: 1px solid #fefae0;
+  padding: 20px;
+  margin: 12px;
+  text-align: center;
+  font-weight: bold;
+}
+
+button {
+  width: 90px;
+  height: 40px;
+  background-color: #ccd5ae;
+  border: none;
+}
+.contain-year{
+    display: flex;
+    align-items: ;
+}

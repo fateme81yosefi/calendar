@@ -1,0 +1,12 @@
+tr{
+    background-color: aqua;
+    border: 1px solid red;
+    padding: 10px;
+    margin: 2px;
+}
+td{
+    background-color: aqua;
+    border: 1px solid red;
+    padding: 20px;
+    margin: 2px;
+}

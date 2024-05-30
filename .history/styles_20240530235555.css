@@ -1,0 +1,17 @@
+tr{
+    background-color: rgb(229, 249, 249);
+    border: 1px solid red;
+    padding: 20px;
+    margin: 12px;
+}
+td,th{
+    background-color: aqua;
+    border: 1px solid red;
+    padding: 20px;
+    margin: 12px;
+}
+
+button{
+    width: 100px;
+    
+}

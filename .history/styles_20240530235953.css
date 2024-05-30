@@ -1,6 +1,3 @@
-* {
-  font-family: sans-serif;
-}
 tr {
   background-color: #ccd5ae;
   border: 1px solid #fefae0;
@@ -18,24 +15,22 @@ th {
 }
 
 button {
-  width: 40px;
+  width: 90px;
   height: 40px;
   background-color: #ccd5ae;
   border: none;
-  border-radius: 100%;
   margin: 10px;
 }
-.contain-year,
-.contain-month {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: row;
-  padding: 10px;
+.contain-year, .contain-month{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 10px;
 }
-.container-calendar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
+.container-calendar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
