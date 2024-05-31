@@ -122,7 +122,7 @@ function findFirstDayMonth(m, y) {
 }
 
 function calcDayCount(m) {
-    switch (m) {
+    switch (m + 1) {
         case 1: return 31;
         case 2: return 28;
         case 3: return 31;
@@ -141,7 +141,7 @@ function calcDayCount(m) {
 function fillAllDay(m, y) {
 
     dayCount = calcDayCount(m)
-   
+
 
     var fd = findFirstDayMonth(m, y);
     fd++;
@@ -155,9 +155,7 @@ function fillAllDay(m, y) {
     for (let i = 1; i <= dayCount; i++) {
 
         const x = row + "-" + col;
-        if(day==i){
-            document.getElementById(x).style.backgroundColor="red"
-        }
+
       
         document.getElementById(x).innerHTML = i;
         if (col >= 7) {

@@ -155,9 +155,7 @@ function fillAllDay(m, y) {
     for (let i = 1; i <= dayCount; i++) {
 
         const x = row + "-" + col;
-        if(day==i){
-            document.getElementById(x).style.backgroundColor="red"
-        }
+        if(day==i)
       
         document.getElementById(x).innerHTML = i;
         if (col >= 7) {
