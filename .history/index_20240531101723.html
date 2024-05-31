@@ -74,15 +74,16 @@
           event.className = "empty";
           var description = document.createElement("span");
           description.textContent = "you don't have any Event yet!";
-          emptyEvent.appendChild(description);
+          event.appendChild(description);
 
-          eventlist.appendChild(emptyEvent);
+          eventlist.appendChild(event);
         } else {
 
           for (var i = 0; i < eventt.length; i++) {
             var event = document.createElement("div");
             event.className = "event";
             event.style.backgroundColor = eventt[i].bg
+            console.log(eventt[i].bg)
 
             var title = document.createElement("h2");
             title.className = "event-title";

@@ -29,10 +29,9 @@ function increaseMonth() {
 
     }
     else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
-
 }
 
 function dec() {
@@ -42,9 +41,9 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
 
 }
 
@@ -158,6 +157,7 @@ function fillAllDay(m, y) {
 
         month = d.getMonth()
         month++
+        console.log(y == d.getFullYear())
         if (day == i && m == month && y == d.getFullYear()) {
             document.getElementById(x).style.backgroundColor = "DodgerBlue"
         }
@@ -209,17 +209,18 @@ function addEvent() {
                     bg: document.getElementById("color").value
                 };
 
-                eventData.push(newEvent);
-                localStorage.setItem("eventt", JSON.stringify(eventData));
-                location.reload();
+                
+    eventData.push(newEvent);
 
-            } else {
+    localStorage.setItem("eventt", JSON.stringify(eventData));
+    location.reload();
+            }else{
                 alert("please set your event date!")
             }
-        } else {
+        }else{
             alert("please set your event time!")
         }
-    } else {
+    }else{
         alert("please set your event title!")
     }
 

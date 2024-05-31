@@ -71,19 +71,13 @@ table{
   border-radius: 10px;
   padding: 10px;
   margin-top: 10px;
-  font-family: sans-serif;
-
 }
 .row-event{
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.empty{
-  display: flex;
-  color: black;
-  background-color: aqua;
-}
+.emp
 @media screen and (max-width: 900px) {
   .container{
     flex-direction: column;

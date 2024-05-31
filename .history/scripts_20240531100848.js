@@ -29,10 +29,9 @@ function increaseMonth() {
 
     }
     else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
-
 }
 
 function dec() {
@@ -42,9 +41,9 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
 
 }
 
@@ -158,6 +157,7 @@ function fillAllDay(m, y) {
 
         month = d.getMonth()
         month++
+        console.log(y == d.getFullYear())
         if (day == i && m == month && y == d.getFullYear()) {
             document.getElementById(x).style.backgroundColor = "DodgerBlue"
         }
@@ -189,43 +189,21 @@ function newEvent() {
 function setEventDate(id) {
     document.getElementById("date").value = (document.getElementById("" + id).innerHTML + "/" + getMonth() + "/" + getYear())
 }
+
 function addEvent() {
     let existingData = localStorage.getItem("eventt");
     let eventData = [];
-
-    if (existingData) {
-        eventData = JSON.parse(existingData);
-    }
-
-
-    if (document.getElementById("title").value) {
-        if (document.getElementById("time").value) {
-            if (document.getElementById("date").value) {
-                let newEvent = {
-                    title: document.getElementById("title").value,
-                    description: document.getElementById("desc").value,
-                    time: document.getElementById("time").value,
-                    date: document.getElementById("date").value,
-                    bg: document.getElementById("color").value
-                };
-
-                eventData.push(newEvent);
-                localStorage.setItem("eventt", JSON.stringify(eventData));
-                location.reload();
-
-            } else {
-                alert("please set your event date!")
-            }
-        } else {
-            alert("please set your event time!")
-        }
-    } else {
-        alert("please set your event title!")
-    }
-
-
+    eventt.push({
+        title: document.getElementById("title").value,
+        description: document.getElementById("desc").value,
+        time: document.getElementById("time").value,
+        date: document.getElementById("date").value,
+        bg: document.getElementById("color").value
+    });
+    eventData = JSON.parse(existingData);
+    eventData.push(eventt);
+    localStorage.setItem("eventt", JSON.stringify(eventData));
 }
-
 
 
 setMonth(m)

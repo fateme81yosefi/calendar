@@ -29,10 +29,9 @@ function increaseMonth() {
 
     }
     else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
-
 }
 
 function dec() {
@@ -42,9 +41,9 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
 
 }
 
@@ -158,6 +157,7 @@ function fillAllDay(m, y) {
 
         month = d.getMonth()
         month++
+        console.log(y == d.getFullYear())
         if (day == i && m == month && y == d.getFullYear()) {
             document.getElementById(x).style.backgroundColor = "DodgerBlue"
         }
@@ -197,33 +197,18 @@ function addEvent() {
         eventData = JSON.parse(existingData);
     }
 
+    let newEvent = {
+        title: document.getElementById("title").value,
+        description: document.getElementById("desc").value,
+        time: document.getElementById("time").value,
+        date: document.getElementById("date").value,
+        bg: document.getElementById("color").value
+    };
 
-    if (document.getElementById("title").value) {
-        if (document.getElementById("time").value) {
-            if (document.getElementById("date").value) {
-                let newEvent = {
-                    title: document.getElementById("title").value,
-                    description: document.getElementById("desc").value,
-                    time: document.getElementById("time").value,
-                    date: document.getElementById("date").value,
-                    bg: document.getElementById("color").value
-                };
+    eventData.push(newEvent);
 
-                eventData.push(newEvent);
-                localStorage.setItem("eventt", JSON.stringify(eventData));
-                location.reload();
-
-            } else {
-                alert("please set your event date!")
-            }
-        } else {
-            alert("please set your event time!")
-        }
-    } else {
-        alert("please set your event title!")
-    }
-
-
+    localStorage.setItem("eventt", JSON.stringify(eventData));
+    window.ref
 }
 
 

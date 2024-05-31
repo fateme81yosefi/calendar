@@ -69,47 +69,45 @@
       <script>
         eventt = JSON.parse(localStorage.getItem("eventt"));
         var eventlist = document.querySelector(".event-list");
-        if (eventt.length == 0) {
-          var emptyEvent = document.createElement("div");
+        if(eventt.length==0){
+          var emptyEvent=document.createElement("div");
           event.className = "empty";
           var description = document.createElement("span");
-          description.textContent = "you don't have any Event yet!";
-          emptyEvent.appendChild(description);
+          description.textContent = "you don`t ";
+        }else{
+          
+        for (var i = 0; i < eventt.length; i++) {
+          var event = document.createElement("div");
+          event.className = "event";
+          event.style.backgroundColor=eventt[i].bg
+          console.log(eventt[i].bg)
 
-          eventlist.appendChild(emptyEvent);
-        } else {
+          var title = document.createElement("h2");
+          title.className = "event-title";
+          title.textContent = eventt[i].title;
+          event.appendChild(title);
 
-          for (var i = 0; i < eventt.length; i++) {
-            var event = document.createElement("div");
-            event.className = "event";
-            event.style.backgroundColor = eventt[i].bg
+          var description = document.createElement("span");
+          description.textContent = eventt[i].description;
+          event.appendChild(description);
 
-            var title = document.createElement("h2");
-            title.className = "event-title";
-            title.textContent = eventt[i].title;
-            event.appendChild(title);
+          var rowEvent = document.createElement("div");
+          rowEvent.className = "row-event";
 
-            var description = document.createElement("span");
-            description.textContent = eventt[i].description;
-            event.appendChild(description);
+          var date = document.createElement("span");
+          date.className = "date";
+          date.textContent = eventt[i].date;
+          rowEvent.appendChild(date);
 
-            var rowEvent = document.createElement("div");
-            rowEvent.className = "row-event";
+          var time = document.createElement("span");
+          time.className = "time";
+          time.textContent = eventt[i].time;
+          rowEvent.appendChild(time);
 
-            var date = document.createElement("span");
-            date.className = "date";
-            date.textContent = eventt[i].date;
-            rowEvent.appendChild(date);
+          event.appendChild(rowEvent);
 
-            var time = document.createElement("span");
-            time.className = "time";
-            time.textContent = eventt[i].time;
-            rowEvent.appendChild(time);
-
-            event.appendChild(rowEvent);
-
-            eventlist.appendChild(event);
-          }
+          eventlist.appendChild(event);
+        }
         }
       </script>
 

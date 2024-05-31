@@ -29,10 +29,9 @@ function increaseMonth() {
 
     }
     else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
-
 }
 
 function dec() {
@@ -42,9 +41,9 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
 
 }
 
@@ -158,6 +157,7 @@ function fillAllDay(m, y) {
 
         month = d.getMonth()
         month++
+        console.log(y == d.getFullYear())
         if (day == i && m == month && y == d.getFullYear()) {
             document.getElementById(x).style.backgroundColor = "DodgerBlue"
         }
@@ -188,6 +188,7 @@ function newEvent() {
 
 function setEventDate(id) {
     document.getElementById("date").value = (document.getElementById("" + id).innerHTML + "/" + getMonth() + "/" + getYear())
+    console.log(document.getElementById("date").valu)
 }
 function addEvent() {
     let existingData = localStorage.getItem("eventt");

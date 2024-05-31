@@ -42,6 +42,7 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
     fillAllDay(monthNameToNum(month), y)

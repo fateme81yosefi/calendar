@@ -30,8 +30,7 @@ function increaseMonth() {
     }
     else {
         setMonth(month)
-    }
-    fillAllDay(monthNameToNum(month), y)
+    }        fillAllDay(month, y)
 
 }
 
@@ -42,9 +41,9 @@ function dec() {
         decYear()
         setMonth(12)
     } else {
+        fillAllDay(month, y)
         setMonth(month)
     }
-    fillAllDay(monthNameToNum(month), y)
 
 }
 
