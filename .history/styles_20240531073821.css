@@ -1,0 +1,44 @@
+* {
+  font-family: sans-serif;
+}
+tr {
+  border: 1px solid #fefae0;
+
+}
+td,
+th {
+  border: 1px solid #fefae0;
+  text-align: center;
+}
+table{
+  width: 20%;
+}
+
+.circle-btn {
+  width: 20px;
+  height: 20px;
+  background-color: #ccd5ae;
+  border: none;
+  border-radius: 100%;
+}
+.contain-year,
+.contain-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.container-calendar {
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+  border: 1px solid DodgerBlue;
+}
+.create-event{
+  padding: 10px 20px;
+}

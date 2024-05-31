@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>calendar</title>
+  <link rel="icon" type="image/x-icon" href="/images/fav.png">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="container-calendar">
+      <button class="create-event" id="create-event" onclick="newEvent()">create</button>
+
+      <div class="contain-year">
+        <button class="circle-btn" onclick="decYear()">
+          &#8249; </button>
+        <span id="year"></span>
+        <button class="circle-btn" onclick="incYear()"> &#8250;</button>
+
+      </div>
+      <div class="contain-month">
+        <button class="circle-btn" onclick="dec()"> &#8249; </button>
+        <span id="month"></span>
+        <button class="circle-btn" onclick="increaseMonth()"> &#8250; </button>
+      </div>
+      <table>
+        <tr>
+          <th>Sun</th>
+          <th>Mon</th>
+          <th>Tue</th>
+          <th>Wed</th>
+          <th>Thu</th>
+          <th>Fri</th>
+          <th>Sat</th>
+        </tr>
+
+        <script>
+          var tableBody = document.createElement("tbody");
+          var table = document.querySelector("table");
+          table.appendChild(tableBody);
+
+          var rows = 5;
+          var cols = 7;
+          for (var i = 1; i <= rows; i++) {
+            var row = document.createElement("tr");
+            for (var j = 1; j <= cols; j++) {
+              var cell = document.createElement("td");
+              cell.id = i + "-" + j;
+              cell.onclick = function () {
+                setEventDate(this.id);
+              };
+              row.appendChild(cell);
+            }
+            tableBody.appendChild(row);
+          }
+        </script>
+      </table>
+
+    </div>
+
+    <div class="event-list">
+      <h1>Event List:</h1>
+
+      <script>
+        const eventt = []
+        var eventlist = document.querySelector(".event-list");
+
+        for (var i = 0; i < eventt.length; i++) {
+          var event = document.createElement("div");
+          event.className = "event";
+
+          var title = document.createElement("h2");
+          title.className = "event-title";
+          title.textContent = eventt[i];
+          event.appendChild(title);
+
+          var description = document.createElement("span");
+          description.textContent = "djkfhusdf";
+          event.appendChild(description);
+
+          var rowEvent = document.createElement("div");
+          rowEvent.className = "row-event";
+
+          var date = document.createElement("span");
+          date.className = "date";
+          date.textContent = "2024/5/31";
+          rowEvent.appendChild(date);
+
+          var time = document.createElement("span");
+          time.className = "time";
+          time.textContent = "23:00";
+          rowEvent.appendChild(time);
+
+          event.appendChild(rowEvent);
+
+          eventlist.appendChild(event);
+        }
+      </script>
+
+    </div>
+    <div class="new-event" id="new-event">
+      <h1>new Event:</h1>
+      <input type="text" id="title" class="title" placeholder="Event Title">
+      <input type="text" id="desc" class="desc" placeholder="Event description">
+      <input type="time" id="time" class="time" placeholder="Event Time">
+      <input class="date" id="date" placeholder="Event Date">
+      <input type="color" id="color" class="color" placeholder="Please choose a color for your event...">
+      <button class="add" onclick="()=>{
+        
+      }">add Event</button>
+    </div>
+
+  </div>
+
+  <script src="/scripts.js"></script>
+
+</body>
+
+</html>

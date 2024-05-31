@@ -1,0 +1,53 @@
+* {
+  font-family: sans-serif;
+}
+.container{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row;
+}
+tr {
+  border: 1px solid LightGray;
+
+}
+td,
+th {
+  border: 1px solid LightGray;
+  text-align: center;
+}
+table{
+  width: 20%;
+}
+
+.circle-btn {
+  width: 20px;
+  height: 20px;
+  background-color: MediumSeaGreen;
+  border: none;
+  border-radius: 100%;
+  margin: 5px;
+}
+.contain-year,
+.contain-month {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 10px;
+}
+.container-calendar {
+  width: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgb(255, 255, 255);
+  padding: 20px;
+}
+.create-event{
+  padding: 10px 20px;
+  width: 100%;
+  background-color: DodgerBlue;
+  color: w;
+}

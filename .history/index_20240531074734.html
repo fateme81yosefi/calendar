@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+  <title>calendar</title>
+  <link rel="icon" type="image/x-icon" href="/images/fav.png">
+  <link rel="stylesheet" href="styles.css">
+
+</head>
+
+<body>
+
+<div class="container">
+  <div class="container-calendar">
+      <button class="create-event" onclick="newEvent()">create</button>
+
+    <div class="contain-year">
+      <button class="circle-btn" onclick="decYear()">
+        &#8249; </button>
+      <span id="year"></span>
+      <button class="circle-btn" onclick="incYear()"> &#8250;</button>
+
+    </div>
+    <div class="contain-month">
+      <button class="circle-btn" onclick="dec()"> &#8249; </button>
+      <span id="month"></span>
+      <button class="circle-btn" onclick="increaseMonth()"> &#8250; </button>
+    </div>
+    <table>
+      <tr>
+        <th>Sun</th>
+        <th>mon</th>
+        <th>Tuey</th>
+        <th>Wed </th>
+        <th>Thu</th>
+        <th>Fri</th>
+        <th>Sat</th>
+      </tr>
+
+      <tr>
+        <td id="1-1"> </td>
+        <td id="1-2"> </td>
+        <td id="1-3"> </td>
+        <td id="1-4"> </td>
+        <td id="1-5"> </td>
+        <td id="1-6"> </td>
+        <td id="1-7"> </td>
+      </tr>
+
+      <tr>
+        <td id="2-1"> </td>
+        <td id="2-2"> </td>
+        <td id="2-3"> </td>
+        <td id="2-4"> </td>
+        <td id="2-5"> </td>
+        <td id="2-6"> </td>
+        <td id="2-7"> </td>
+      </tr>
+
+      <tr>
+        <td id="3-1"> </td>
+        <td id="3-2"> </td>
+        <td id="3-3"> </td>
+        <td id="3-4"> </td>
+        <td id="3-5"> </td>
+        <td id="3-6"> </td>
+        <td id="3-7"> </td>
+      </tr>
+
+      <tr>
+        <td id="4-1"> </td>
+        <td id="4-2"> </td>
+        <td id="4-3"> </td>
+        <td id="4-4"> </td>
+        <td id="4-5"> </td>
+        <td id="4-6"> </td>
+        <td id="4-7"> </td>
+      </tr>
+
+      <tr>
+        <td id="5-1"> </td>
+        <td id="5-2"> </td>
+        <td id="5-3"> </td>
+        <td id="5-4"> </td>
+        <td id="5-5"> </td>
+        <td id="5-6"> </td>
+        <td id="5-7"> </td>
+      </tr>
+    </table>
+  </div>
+  <div class="new-event">
+    <input type="text" class="title">
+    <input type="time" class="time">
+    <input type="date" class="date">
+  </div>
+  <div class="event-list">
+    <div class="event">
+      <h2 class=""></h2>
+    </div>
+  </div>
+
+
+</div>
+
+  <script src="/scripts.js"></script>
+
+</body>
+
+</html>
