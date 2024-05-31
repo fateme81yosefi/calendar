@@ -51,9 +51,7 @@
               var cell = document.createElement("td");
               cell.id = i + "-" + j;
               cell.onclick = function () {
-                newEvent();
                 setEventDate(this.id);
-
               };
               row.appendChild(cell);
             }
@@ -71,9 +69,8 @@
       <script>
         eventt = JSON.parse(localStorage.getItem("eventt"));
         var eventlist = document.querySelector(".event-list");
-        console.log(eventt)
-
-        if (!eventt) {
+        if (eventt.length == 0) {
+          console.log()
           var emptyEvent = document.createElement("div");
           emptyEvent.className = "empty";
           var bb = document.createElement("span");
@@ -124,8 +121,7 @@
       <input type="text" id="desc" class="desc" placeholder="Event description">
       <input type="time" id="time" class="time" placeholder="Event Time">
       <input class="date" id="date" placeholder="Event Date">
-      <input type="color" id="color" value="#ff0000" class="color"
-        placeholder="Please choose a color for your event...">
+      <input type="color" id="color" class="color" placeholder="Please choose a color for your event...">
       <button class="add" onclick="addEvent()">add Event</button>
     </div>
 
