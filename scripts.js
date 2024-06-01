@@ -226,6 +226,13 @@ function addEvent() {
 
 }
 
+function deleteEvent(inedx){
+    let data = JSON.parse(localStorage.getItem('eventt'));
+    data.splice(inedx, 1);
+    localStorage.setItem('eventt', JSON.stringify(data));
+    location.reload();
+
+}
 
 
 setMonth(m)
