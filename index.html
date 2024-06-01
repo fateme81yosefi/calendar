@@ -88,10 +88,20 @@
             event.className = "event";
             event.style.backgroundColor = eventt[i].bg
 
-            var title = document.createElement("h2");
+            var title = document.createElement("h3");
             title.className = "event-title";
             title.textContent = eventt[i].title;
             event.appendChild(title);
+
+
+            var deleteBtn = document.createElement("img");
+            deleteBtn.className = "delete";
+            deleteBtn.src="./images/Delete-button.svg"
+            deleteBtn.id = i;
+            deleteBtn.onclick = function () {
+                deleteEvent(this.id);
+              };
+              event.appendChild(deleteBtn);
 
             var description = document.createElement("span");
             description.textContent = eventt[i].description;
@@ -119,7 +129,7 @@
 
     </div>
     <div class="new-event" id="new-event">
-      <h1>new Event:</h1>
+      <h1>New Event:</h1>
       <input type="text" id="title" class="title" placeholder="Event Title">
       <input type="text" id="desc" class="desc" placeholder="Event description">
       <input type="time" id="time" class="time" placeholder="Event Time">
